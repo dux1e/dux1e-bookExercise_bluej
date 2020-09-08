@@ -13,6 +13,8 @@ class Book
     private String title;
     private int pages;
     private String refNumber;
+    private int borrowed;
+    private boolean courseText;
 
     /**
      * Set the author and title fields when this object
@@ -24,6 +26,7 @@ class Book
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        courseText = false;
     }
 
     // Add the methods here ...
@@ -52,25 +55,60 @@ class Book
     }
     
     public void printBookDetails() {
-        if(refNumber.length() = 0) {
+        if(refNumber.length() == 0) {
             System.out.println("The author of " + title + " is:");
             System.out.println(author);
             System.out.println("The book has " + pages + " pages");
             System.out.println("The reference number is ZZZ");
+            System.out.println("The book has been borred " + borrowed + " times");
+                if(courseText == true) {
+                    System.out.println("This book is used as a course text");
+                } else {
+                    System.out.println("This book is not used a a course text");
+                }
         } else {
         System.out.println("The author of " + title + " is:");
         System.out.println(author);
         System.out.println("The book has " + pages + " pages");
         System.out.println("The refence number is " + refNumber);
+        System.out.println("The book has been borred " + borrowed + " times");
+             if(courseText == true) {
+                    System.out.println("This book is used as a course text");
+                } else {
+                    System.out.println("This book is not used a a course text");
+                }
         }
     }
     
     public void setRefNumber(String ref) {
-        refNumber = ref;
+        if(ref.length() < 3) {
+            System.out.println("ಠ_ಠ");
+        } else {
+            refNumber = ref;
+        }        
     }
     
     public String getRefNumber() {
         return refNumber;
     }
     
+    public void borrow() {
+        borrowed += 1;
+    }
+    
+    public int getBorrowed() {
+        return borrowed;
+    }
+    
+    public void toggleCourseText() {
+        if(courseText == false){
+            courseText = true;
+        } else {
+            courseText = false;
+        }
+    }
+    
+    public boolean isCourseText() {
+        return courseText;
+    }
 }
