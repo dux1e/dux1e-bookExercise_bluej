@@ -64,7 +64,7 @@ class Book
                 if(courseText == true) {
                     System.out.println("This book is used as a course text");
                 } else {
-                    System.out.println("This book is not used a a course text");
+                    System.out.println("This book is not used as a course text");
                 }
         } else {
         System.out.println("The author of " + title + " is:");
@@ -75,7 +75,7 @@ class Book
              if(courseText == true) {
                     System.out.println("This book is used as a course text");
                 } else {
-                    System.out.println("This book is not used a a course text");
+                    System.out.println("This book is not used as a course text");
                 }
         }
     }
